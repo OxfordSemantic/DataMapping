@@ -1,0 +1,69 @@
+# Schema version: 0.2.0
+# Source file: examples/transactions/data.csv
+# MappingID: some-unique-id-12345
+# MappingVersion: 1.0.0
+# MappingName: Transactions
+
+
+@prefix : <http://example.com/transactions/vocabulary#> .
+@prefix accounts: <http://example.com/transactions/accounts/> .
+@prefix clients: <http://example.com/transactions/clients/> .
+@prefix transactions: <http://example.com/transactions/transactions/> .
+
+clients:1234 a :Client ;
+    :hasBankAccount accounts:12345670 .
+
+accounts:12345670 a :BankAccount .
+
+accounts:12345670 a :BankAccount ;
+    :hasAccountNumber "12345670"^^xsd:string ;
+    :hasTransaction transactions:Trs222 .
+
+transactions:Trs222 a :Transaction .
+
+transactions:Trs222 a :Transaction ;
+    :hasReference "rent"^^xsd:string ;
+    :hasValue "52"^^xsd:string ;
+    :onDate "2024-8-13"^^xsd:string ;
+    :hasSourceBankAccount accounts:73625937 .
+
+accounts:73625937 a :BankAccount .
+
+clients:1234 a :Client ;
+    :hasBankAccount accounts:12345635 .
+
+accounts:12345635 a :BankAccount .
+
+accounts:12345635 a :BankAccount ;
+    :hasAccountNumber "12345635"^^xsd:string ;
+    :hasTransaction transactions:Trs274 .
+
+transactions:Trs274 a :Transaction .
+
+transactions:Trs274 a :Transaction ;
+    :hasReference "coffee"^^xsd:string ;
+    :hasValue "67"^^xsd:string ;
+    :onDate "2024-8-13"^^xsd:string ;
+    :hasSourceBankAccount accounts:67537907 .
+
+accounts:67537907 a :BankAccount .
+
+clients:1234 a :Client ;
+    :hasBankAccount accounts:12345673 .
+
+accounts:12345673 a :BankAccount .
+
+accounts:12345673 a :BankAccount ;
+    :hasAccountNumber "12345673"^^xsd:string ;
+    :hasTransaction transactions:Trs523 .
+
+transactions:Trs523 a :Transaction .
+
+transactions:Trs523 a :Transaction ;
+    :hasReference "order"^^xsd:string ;
+    :hasValue "151"^^xsd:string ;
+    :onDate "2024-8-14"^^xsd:string ;
+    :hasSourceBankAccount accounts:5674012 .
+
+accounts:5674012 a :BankAccount .
+

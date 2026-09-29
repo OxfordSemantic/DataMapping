@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "0.2.0",
+  "mappingVersion": "1.0.0",
+  "mappingID": "abc123",
+  "mappingName": "Person",
+  "prefixes": {
+    "ex": "<http://example.com/>",
+    "foaf": "<http://xmlns.com/foaf/0.1/>",
+    "xsd": "<http://www.w3.org/2001/XMLSchema#>",
+    "company": "<http://example.com/company/>",
+    "rdf": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
+  },
+  "tripleMaps": [
+    {
+      "subjectMap": {
+        "value": "<http://example.com/person/{ID}>",
+        "type": "IRI",
+        "classes": [ "ex:Person", "<http://example.com/class with spaces>" ]
+      },
+      "predicateObjectMaps": [
+        {
+          "predicate": "foaf:name",
+          "objectMap": {
+            "value": "{FirstName} {LastName}",
+            "type": "xsd:string"
+          }
+        },
+        {
+          "predicate": "foaf:name",
+          "objectMap": {
+            "value": "{FirstName} {LastName}",
+            "type": "rdf:langString",
+            "lang": "pl"
+          }
+        },
+        {
+          "predicate": "ex:worksFor",
+          "objectMap": {
+            "value": "company:{CompanyID}",
+            "type": "IRI",
+            "classes": [ "ex:Company" ]
+          }
+        },
+        {
+          "predicate": "ex:employedOn",
+          "objectMap": {
+            "value": "{Year}-01-01",
+            "type": "xsd:date"
+          }
+        }
+      ]
+    },
+    {
+      "subjectMap": {
+        "value": "company:{CompanyID}",
+        "type": "IRI",
+        "classes": [ "ex:Company" ]
+      },
+      "predicateObjectMaps": [
+        {
+          "predicate": "foaf:name",
+          "objectMap": {
+            "value": "{CompanyName}",
+            "type": "xsd:string"
+          }
+        }
+      ]
+    }
+  ]
+}
+

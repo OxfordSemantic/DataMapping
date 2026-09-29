@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "0.2.0",
+  "mappingVersion": "1.0.0",
+  "mappingID": "uvw987",
+  "mappingName": "Person",
+  "prefixes": {
+    "ex": "<http://example.com/>",
+    "foaf": "<http://xmlns.com/foaf/0.1/>",
+    "xsd": "<http://www.w3.org/2001/XMLSchema#>",
+    "rdf": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
+  },
+  "tripleMaps": [
+    {
+      "subjectMap": {
+        "value": "<http://example.com/person/{row#}>",
+        "type": "IRI",
+        "classes": [ "ex:Person" ]
+      },
+      "predicateObjectMaps": [
+        {
+          "predicate": "foaf:name",
+          "objectMap": {
+            "value": "{First Name} {Last Name}",
+            "type": "xsd:string"
+          }
+        },
+        {
+          "predicate": "foaf:name",
+          "objectMap": {
+            "value": "{First Name} {Last Name}",
+            "type": "rdf:langString",
+            "lang": "pl"
+          }
+        },
+        {
+          "predicate": "ex:sex",
+          "objectMap": {
+            "value": "{Sex}",
+            "type": "xsd:string"
+          }
+        },
+        {
+          "predicate": "ex:age",
+          "objectMap": {
+            "value": "{Age}",
+            "type": "xsd:integer"
+          }
+        }
+      ]
+    }
+  ]
+}

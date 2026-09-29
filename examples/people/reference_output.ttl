@@ -1,0 +1,39 @@
+# Schema version: 0.2.0
+# Source file: examples/people/data.csv
+# MappingID: uvw987
+# MappingVersion: 1.0.0
+# MappingName: Person
+
+
+@prefix ex: <http://example.com/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.com/person/1> a ex:Person ;
+    foaf:name "Beverly Strickland"^^xsd:string ;
+    foaf:name "Beverly Strickland"@pl ;
+    ex:sex "F"^^xsd:string ;
+    ex:age "33"^^xsd:integer .
+
+<http://example.com/person/2> a ex:Person ;
+    foaf:name "Thomas Peterson"^^xsd:string ;
+    foaf:name "Thomas Peterson"@pl ;
+    ex:sex "M"^^xsd:string .
+
+<http://example.com/person/3> a ex:Person ;
+    foaf:name "Urs Andresson"^^xsd:string ;
+    foaf:name "Urs Andresson"@pl ;
+    ex:sex "M"^^xsd:string ;
+    ex:age "63"^^xsd:integer .
+
+<http://example.com/person/4> a ex:Person ;
+    foaf:name "Abigail Edwards"^^xsd:string ;
+    foaf:name "Abigail Edwards"@pl ;
+    ex:sex "F"^^xsd:string ;
+    ex:age "52"^^xsd:integer .
+
+<http://example.com/person/5> a ex:Person ;
+    foaf:name "Abigail Edwards"^^xsd:string ;
+    foaf:name "Abigail Edwards"@pl ;
+    ex:age "36"^^xsd:integer .
+

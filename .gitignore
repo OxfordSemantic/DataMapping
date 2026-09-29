@@ -1,0 +1,5 @@
+__pycache__/
+*.ttl
+!reference_output.ttl
+.idea
+diff.rdfox

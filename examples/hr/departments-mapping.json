@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "0.2.0",
+  "mappingVersion": "1.0.0",
+  "mappingID": "some-unique-id-12345",
+  "mappingName": "Departments",
+  "prefixes": {
+    "": "<http://example.com/hr/vocabulary#>",
+    "departments": "<http://example.com/hr/departments/>",
+    "employees": "<http://example.com/hr/employees/>",
+    "foaf": "<http://xmlns.com/foaf/0.1/>",
+    "xsd": "<http://www.w3.org/2001/XMLSchema#>"
+  },
+  "tripleMaps": [
+    {
+      "subjectMap": {
+        "value": "departments:{Department ID}",
+        "type": "IRI",
+        "classes": [ ":Department" ]
+      },
+      "predicateObjectMaps": [
+        {
+          "predicate": "foaf:name",
+          "objectMap": {
+            "value": "{Department Name}",
+            "type": "xsd:string"
+          }
+        }
+      ]
+    }
+  ]
+}

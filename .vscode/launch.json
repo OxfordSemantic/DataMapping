@@ -1,0 +1,93 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "run employment example",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "data_mapping",
+            "args": [
+                "examples/employment/data.parquet",
+                "examples/employment/mapping.json",
+                "examples/employment/output.ttl"
+            ],
+        },
+        {
+            "name": "run hr example (departments)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "data_mapping",
+            "args": [
+                "examples/hr/departments.csv",
+                "examples/hr/departments-mapping.json",
+                "examples/hr/departments.ttl"
+            ],
+        },
+        {
+            "name": "run hr example (employees)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "data_mapping",
+            "args": [
+                "examples/hr/employees.csv",
+                "examples/hr/employees-mapping.json",
+                "examples/hr/employees.ttl"
+            ],
+        },
+        {
+            "name": "run people example",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "data_mapping",
+            "args": [
+                "examples/people/data.csv",
+                "examples/people/mapping.json",
+                "examples/people/output.ttl"
+            ],
+        },
+        {
+            "name": "run titanic example",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "data_mapping",
+            "args": [
+                "examples/titanic/data.parquet",
+                "examples/titanic/mapping.json",
+                "examples/titanic/output.ttl"
+            ],
+        },
+        {
+            "name": "run transactions example",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "data_mapping",
+            "args": [
+                "examples/transactions/data.csv",
+                "examples/transactions/mapping.json",
+                "examples/transactions/output.ttl"
+            ],
+        },
+        {
+            "name": "run flight example",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "data_mapping",
+            "args": [
+                "examples/flight/f1m.parquet",
+                "examples/flight/mapping.json",
+                "examples/flight/output.ttl"
+            ],
+        },
+        {
+            "name": "run northwind example",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "data_mapping",
+            "args": [
+                "examples/northwind/orderDetails.csv",
+                "examples/northwind/orderDetails.json",
+                "examples/northwind/output.ttl"
+            ],
+        }
+    ]
+}

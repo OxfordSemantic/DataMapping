@@ -1,0 +1,4 @@
+ClientID,DestinationAccount,TransactionID,Value,Reference,SourceAccount,Year,Month,Day
+1234,12345670,Trs222,52,rent,73625937,2024,8,13
+1234,12345635,Trs274,67,coffee,67537907,2024,8,13
+1234,12345673,Trs523,151,order,5674012,2024,8,14

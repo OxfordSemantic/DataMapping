@@ -1,0 +1,94 @@
+{
+  "schemaVersion": "0.2.0",
+  "mappingVersion": "1.0.0",
+  "mappingID": "some-unique-id-12345",
+  "mappingName": "Transactions",
+  "prefixes": {
+    "": "<http://example.com/transactions/vocabulary#>",
+    "accounts": "<http://example.com/transactions/accounts/>",
+    "clients": "<http://example.com/transactions/clients/>",
+    "transactions": "<http://example.com/transactions/transactions/>",
+    "xsd": "<http://www.w3.org/2001/XMLSchema#>"
+  },
+  "tripleMaps": [
+    {
+      "subjectMap": {
+        "value": "clients:{ClientID}",
+        "type": "IRI",
+        "classes": [ ":Client" ]
+      },
+      "predicateObjectMaps": [
+        {
+          "predicate": ":hasBankAccount",
+          "objectMap": {
+            "value": "accounts:{DestinationAccount}",
+            "type": "IRI",
+            "classes": [ ":BankAccount" ]
+          }
+        }
+      ]
+    },
+    {
+      "subjectMap": {
+        "value": "accounts:{DestinationAccount}",
+        "type": "IRI",
+        "classes": [ ":BankAccount" ]
+      },
+      "predicateObjectMaps": [
+        {
+          "predicate": ":hasAccountNumber",
+          "objectMap": {
+            "value": "{DestinationAccount}",
+            "type": "xsd:string"
+          }
+        },
+        {
+          "predicate": ":hasTransaction",
+          "objectMap": {
+            "value": "transactions:{TransactionID}",
+            "type": "IRI",
+            "classes": [ ":Transaction" ]
+          }
+        }
+      ]
+    },
+    {
+      "subjectMap": {
+        "value": "transactions:{TransactionID}",
+        "type": "IRI",
+        "classes": [ ":Transaction" ]
+      },
+      "predicateObjectMaps": [
+        {
+          "predicate": ":hasReference",
+          "objectMap": {
+            "value": "{Reference}",
+            "type": "xsd:string"
+          }
+        },
+        {
+          "predicate": ":hasValue",
+          "objectMap": {
+            "value": "{Value}",
+            "type": "xsd:string"
+          }
+        },
+        {
+          "predicate": ":onDate",
+          "objectMap": {
+            "value": "{Year}-{Month}-{Day}",
+            "type": "xsd:string"
+          }
+        },
+        {
+          "predicate": ":hasSourceBankAccount",
+          "objectMap": {
+            "value": "accounts:{SourceAccount}",
+            "type": "IRI",
+            "classes": [ ":BankAccount" ]
+          }
+        }
+      ]
+    }
+  ]
+}

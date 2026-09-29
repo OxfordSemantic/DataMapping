@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tabular to RDF Data Mapping Schema",
+  "type": "object",
+  "required": ["schemaVersion", "mappingID", "tripleMaps"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "0.2.0",
+      "description": "This document must conform to schema version 0.2.0"
+    },
+    "mappingID": { "type": "string" },
+    "mappingVersion": {
+      "type": "string",
+      "description": "Version of the document's content."
+    },
+    "mappingName": { "type": "string" },
+    "prefixes": {
+      "type": "object",
+      "additionalProperties": { "type": "string" },
+      "description": "Defines namespace prefixes for compact IRI usage."
+    },
+    "tripleMaps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["subjectMap", "predicateObjectMaps"],
+        "additionalProperties": false,
+        "properties": {
+          "subjectMap": {
+            "type": "object",
+            "required": ["value", "type"],
+            "additionalProperties": false,
+            "properties": {
+              "value": { "type": "string" },
+              "type": { "type": "string", "enum": ["IRI"] },
+              "classes": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          },
+          "predicateObjectMaps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["predicate", "objectMap"],
+              "additionalProperties": false,
+              "properties": {
+                "predicate": { "type": "string" },
+                "objectMap": {
+                  "type": "object",
+                  "description": "Specifies how object values are constructed. If type=IRI, class can be used.",
+                  "required": ["value", "type"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "value": { "type": "string" },
+                    "type": { "type": "string" },
+                    "lang": { "type": "string" },
+                    "classes": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

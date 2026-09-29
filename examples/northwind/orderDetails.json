@@ -1,0 +1,94 @@
+{
+  "schemaVersion": "0.2.0",
+  "mappingID": "e25pzq8ZWseCc5mqsrh4bS",
+  "mappingName": "Order Details",
+  "prefixes": {
+    "": "<http://www.example.com/terms/>",
+    "xsd": "<http://www.w3.org/2001/XMLSchema#>",
+    "product": "<http://www.example.com/terms/Product/>",
+    "orderDetail": "<http://www.example.com/terms/OrderDetail/>",
+    "order": "<http://www.example.com/terms/Order/>"
+  },
+  "tripleMaps": [
+    {
+      "subjectMap": {
+        "value": "orderDetail:{ID}",
+        "type": "IRI",
+        "classes": [
+          ":OrderDetail"
+        ]
+      },
+      "predicateObjectMaps": [
+        {
+          "predicate": ":unitPrice",
+          "objectMap": {
+            "value": "{unitPrice}",
+            "type": "xsd:decimal"
+          }
+        },
+        {
+          "predicate": ":discount",
+          "objectMap": {
+            "value": "{discount}",
+            "type": "xsd:decimal"
+          }
+        },
+        {
+          "predicate": ":quantity",
+          "objectMap": {
+            "value": "{quantity}",
+            "type": "xsd:integer"
+          }
+        },
+        {
+          "predicate": ":hasProduct",
+          "objectMap": {
+            "value": "product:{productID}",
+            "type": "IRI",
+            "classes": [
+              ":Product"
+            ]
+          }
+        },
+        {
+          "predicate": ":referencedInRow",
+          "objectMap": {
+            "value": "{row#}",
+            "type": "xsd:integer"
+          }
+        }
+      ]
+    },
+    {
+      "subjectMap": {
+        "value": "product:{productID}",
+        "type": "IRI",
+        "classes": [
+          ":Product"
+        ]
+      },
+      "predicateObjectMaps": []
+    },
+    {
+      "subjectMap": {
+        "value": "order:{orderID}",
+        "type": "IRI",
+        "classes": [
+          ":Order"
+        ]
+      },
+      "predicateObjectMaps": [
+        {
+          "predicate": ":hasOrderDetail",
+          "objectMap": {
+            "value": "orderDetail:{ID}",
+            "type": "IRI",
+            "classes": [
+              ":OrderDetail"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

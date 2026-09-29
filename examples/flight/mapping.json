@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "0.2.0",
+  "mappingVersion": "1.0.0",
+  "mappingID": "55662e93fc674408a9b4f466a6aa815f",
+  "mappingName": "Flights",
+  "prefixes": {
+    "fl": "<http://www.flights.com/>",
+    "foaf": "<http://xmlns.com/foaf/0.1/>",
+    "xsd": "<http://www.w3.org/2001/XMLSchema#>"
+  },
+  "tripleMaps": [
+    {
+      "subjectMap": {
+        "value": "fl:{row#}",
+        "type": "IRI",
+        "classes": [ "fl:Flight" ]
+      },
+      "predicateObjectMaps": [
+        {
+          "predicate": "fl:date",
+          "objectMap": {
+            "value": "{FL_DATE}",
+            "type": "xsd:string"
+          }
+        },
+        {
+          "predicate": "fl:departureDelayInMinutes",
+          "objectMap": {
+            "value": "{DEP_DELAY}",
+            "type": "xsd:decimal"
+          }
+        }
+      ]
+    },
+    {
+      "subjectMap": {
+        "value": "<http://www.flights.com/{row#}>",
+        "type": "IRI",
+        "classes": [ "fl:Flight" ]
+      },
+      "predicateObjectMaps": [
+        {
+          "predicate": "fl:arrivalDelayInMinutes",
+          "objectMap": {
+            "value": "{ARR_DELAY}",
+            "type": "xsd:decimal"
+          }
+        },
+        {
+          "predicate": "fl:flightDuration",
+          "objectMap": {
+            "value": "P{AIR_TIME}M",
+            "type": "xsd:duration"
+          }
+        },
+        {
+          "predicate": "fl:distance",
+          "objectMap": {
+            "value": "{DISTANCE}",
+            "type": "xsd:decimal"
+          }
+        }
+      ]
+    }
+  ]
+}
+

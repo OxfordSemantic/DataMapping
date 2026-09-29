@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "0.2.0",
+  "mappingVersion": "3.8.2",
+  "mappingID": "2G61MDQAXvkwYbtm5FMUhG",
+  "mappingName": "Titanic Passenger Mapping",
+  "prefixes": {
+    "": "<http://example.com/titantic/vocabulary#>",
+    "passengers": "<http://example.com/titantic/passengers/>",
+    "classes": "<http://example.com/titantic/passenger-classes/>",
+    "foaf": "<http://xmlns.com/foaf/0.1/>",
+    "xsd": "<http://www.w3.org/2001/XMLSchema#>"
+
+  },
+  "tripleMaps": [
+    {
+      "subjectMap": {
+        "value": "passengers:{PassengerId}",
+        "type": "IRI",
+        "classes": [ ":Passenger" ]
+      },
+      "predicateObjectMaps": [
+        {
+          "predicate": "foaf:name",
+          "objectMap": {
+            "value": "{Name}",
+            "type": "xsd:string"
+          }
+        },
+        {
+          "predicate": ":sex",
+          "objectMap": {
+            "value": "{Sex}",
+            "type": "xsd:string"
+          }
+        },
+        {
+          "predicate": "foaf:age",
+          "objectMap": {
+            "value": "{Age}",
+            "type": "xsd:decimal"
+          }
+        },
+        {
+          "predicate": ":passengerClass",
+          "objectMap": {
+            "value": "classes:{Pclass}",
+            "type": "IRI",
+            "classes": [ ":PassengerClass" ]
+          }
+        },
+        {
+          "predicate": ":referencedInRow",
+          "objectMap": {
+            "value": "{row#}",
+            "type": "xsd:int"
+          }
+        }
+      ]
+    }
+  ]
+}
+
